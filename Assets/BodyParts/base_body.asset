@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1ea049766bc8d4f90f4e225232f4ba, type: 3}
+  m_Name: base_body
+  m_EditorClassIdentifier: 
+  hierarchy_name: female_batsmen1:Mesh_Jersey
+  type: 1
+  mesh: {fileID: 5603135928274303783, guid: b7bd62cff636a014d8763d1f2238e911, type: 3}
+  rig_map:
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine/female_batsmen1:Bind_Spine1
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine/female_batsmen1:Bind_Spine1/female_batsmen1:Bind_Spine2
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine/female_batsmen1:Bind_Spine1/female_batsmen1:Bind_Spine2/female_batsmen1:Bind_Neck
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine/female_batsmen1:Bind_Spine1/female_batsmen1:Bind_Spine2/female_batsmen1:Bind_Neck/female_batsmen1:Bind_Head
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine/female_batsmen1:Bind_Spine1/female_batsmen1:Bind_Spine2/female_batsmen1:Bind_LeftShoulder
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine/female_batsmen1:Bind_Spine1/female_batsmen1:Bind_Spine2/female_batsmen1:Bind_LeftShoulder/female_batsmen1:Bind_LeftArm
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine/female_batsmen1:Bind_Spine1/female_batsmen1:Bind_Spine2/female_batsmen1:Bind_LeftShoulder/female_batsmen1:Bind_LeftArm/female_batsmen1:Bind_LeftForeArm
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_LeftUpLeg
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_RightUpLeg
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_LeftUpLeg/female_batsmen1:Bind_LeftLeg
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_LeftUpLeg/female_batsmen1:Bind_LeftLeg/female_batsmen1:Bind_LeftFoot
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_LeftUpLeg/female_batsmen1:Bind_LeftLeg/female_batsmen1:Bind_LeftFoot/female_batsmen1:Bind_LeftToeBase
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine/female_batsmen1:Bind_Spine1/female_batsmen1:Bind_Spine2/female_batsmen1:Bind_RightShoulder
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine/female_batsmen1:Bind_Spine1/female_batsmen1:Bind_Spine2/female_batsmen1:Bind_RightShoulder/female_batsmen1:Bind_RightArm
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_Spine/female_batsmen1:Bind_Spine1/female_batsmen1:Bind_Spine2/female_batsmen1:Bind_RightShoulder/female_batsmen1:Bind_RightArm/female_batsmen1:Bind_RightForeArm
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_RightUpLeg/female_batsmen1:Bind_RightLeg
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_RightUpLeg/female_batsmen1:Bind_RightLeg/female_batsmen1:Bind_RightFoot
+  - female_batsmen1:Bind_Joint_GRP/female_batsmen1:Bind_Hips/female_batsmen1:Bind_RightUpLeg/female_batsmen1:Bind_RightLeg/female_batsmen1:Bind_RightFoot/female_batsmen1:Bind_RightToeBase
+  materials:
+  - {fileID: 2100000, guid: c7850f44b49d4874a91c3c42af33f608, type: 2}

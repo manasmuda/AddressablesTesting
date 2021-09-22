@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Packed Assets2
+  m_EditorClassIdentifier: 
+  m_GroupName: Packed Assets2
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b1c2b163513d9674da43c508d81ae88a
+  m_SerializeEntries:
+  - m_GUID: a35b1745ea5c6764da365935902743a3
+    m_Address: Assets/Prefabs/Ripple.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 28d7924d7ea992e419ad806a39d9b6c3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 268cdb9e3e82da342ad2b7d4250a74e1, type: 2}
+    - {fileID: 11400000, guid: dda77e751e4245f45bb32cbc946380aa, type: 2}

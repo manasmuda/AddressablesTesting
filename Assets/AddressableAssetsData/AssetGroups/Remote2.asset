@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Remote2
+  m_EditorClassIdentifier: 
+  m_GroupName: Remote2
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e00c568e21c87e647941004717719a1c
+  m_SerializeEntries:
+  - m_GUID: 368a681f2dcd5344484ddfe01d99faf6
+    m_Address: Assets/Sprites/Image.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 28d7924d7ea992e419ad806a39d9b6c3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 4b1e68548f6348f42b29ecf47759373c, type: 2}
+    - {fileID: 11400000, guid: 5ab78e5dca188d94eb4082c0c67b5198, type: 2}

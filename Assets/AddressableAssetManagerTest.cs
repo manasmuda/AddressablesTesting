@@ -26,7 +26,7 @@ public class AddressableAssetManagerTest : MonoBehaviour
     {
         load.onClick.RemoveAllListeners();
         load.onClick.AddListener(delegate {
-            AddressableAssetManager.TryLoadAndInstatiate(assets[pos], objectPlace , pos.ToString()+"_object");
+            //AddressableAssetManager.TryLoadAndInstatiate(assets[pos], objectPlace , pos.ToString()+"_object");
         });
         unload.onClick.RemoveAllListeners();
         unload.onClick.AddListener(delegate {

@@ -42,8 +42,7 @@ public class AddressablesVersioningTest : MonoBehaviour
     public async void WaitAndLoad() {
         await Task.Delay(2000);
         _deliveryManager.SetDownloadCompleteListener(delegate {
-            AddressableAssetManager.TryLoadAndInstatiate(testObject, content, _container, delegate {
-            });
+            AddressableAssetManager.TryLoadAndInstantiateGameObject(testObject, content, _container);
         });
     }
 

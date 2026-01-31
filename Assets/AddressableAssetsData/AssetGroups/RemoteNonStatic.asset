@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/TestPrefab3.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Remote
+    - TestLabel
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 28d7924d7ea992e419ad806a39d9b6c3, type: 2}
   m_SchemaSet:

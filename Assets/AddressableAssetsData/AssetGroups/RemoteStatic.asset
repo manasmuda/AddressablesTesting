@@ -18,10 +18,10 @@ MonoBehaviour:
   m_GUID: 902251116ad260746962c384ae59f50b
   m_SerializeEntries:
   - m_GUID: 7a947fac13d2f1747936f47091a3bcb2
-    m_Address: Assets/Prefabs/TestPrefab2.prefab
+    m_Address: TestPrefab2
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Remote
+    - TestLabel
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 28d7924d7ea992e419ad806a39d9b6c3, type: 2}
   m_SchemaSet:

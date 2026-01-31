@@ -48,6 +48,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 858780652f526f04b852d6a45150d7cc, type: 2}
   - {fileID: 11400000, guid: 9f750919f6a4f4a46998672dc14ee7f2, type: 2}
   - {fileID: 11400000, guid: 656e9ebfec29f0b4b983d82f5f55f07f, type: 2}
+  - {fileID: 11400000, guid: 268ec5aaeae02ab4fad3a8305b52d7bb, type: 2}
+  - {fileID: 11400000, guid: 6755f27e38232454f9763a485f57c73f, type: 2}
+  - {fileID: 11400000, guid: 44c5885aac0677145818df890dbd08a2, type: 2}
+  - {fileID: 11400000, guid: f4f28ec5c52dcfa4bb5b8d2bcae75b16, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -118,6 +122,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - Remote
+    - TestLabel
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 45d315faee2775f4488cbb4c5bf096d5, type: 2}

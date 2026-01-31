@@ -7,6 +7,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.AddressableAssets.ResourceLocators;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
+using Zenject;
 
 public class AddressableAssetManager
 {
@@ -16,6 +17,14 @@ public class AddressableAssetManager
     }
    
     public static bool IsLoading(AssetReference aRef) {
+        return aRef.IsValid() && aRef.OperationHandle.Status == AsyncOperationStatus.None && aRef.Asset == null;
+    }
+
+    public static bool IsLoaded(AssetAddressReference aRef) {
+        return aRef.IsValid() && aRef.Asset != null;
+    }
+
+    public static bool IsLoading(AssetAddressReference aRef) {
         return aRef.IsValid() && aRef.OperationHandle.Status == AsyncOperationStatus.None && aRef.Asset == null;
     }
 
@@ -119,7 +128,75 @@ public class AddressableAssetManager
         return asset;
     }
 
-    
+    public static async Task<TObjectType> TryGetOrLoadObjectAsync<TObjectType>(AssetAddressReference aRef) where TObjectType : UnityEngine.Object {
+        TObjectType asset = default(TObjectType);
+        if(aRef == null || !aRef.RuntimeKeyIsValid()) {
+            Debug.LogError("Invalid run time key");
+            return asset;
+        }
+        if(IsLoaded(aRef)) {
+            try {
+                asset = (TObjectType)aRef.Asset;
+            } catch {
+                Debug.LogError("Loaded Asset Type and Requested asset type do not match");
+            }
+        } else if(IsLoading(aRef)) {
+            try {
+                await aRef.OperationHandle.Convert<TObjectType>().Task;
+                if(aRef.Asset != null) {
+                    asset = (TObjectType)aRef.Asset;
+                }
+            } catch {
+                Debug.LogError("Loaded Asset Type and Requested asset type do not match");
+            }
+        } else {
+            AsyncOperationHandle<TObjectType> handle = aRef.LoadAssetAsync<TObjectType>();
+            //aRef.ShowResourceLocations();
+            await handle.Task;
+            if(aRef.Asset != null) {
+                asset = (TObjectType)aRef.Asset;
+            } else {
+                Debug.LogError("Failed Loading " + aRef);
+            }
+        }
+        return asset;
+    }
+
+    public static async Task<TObjectType> TryGetOrLoadObjectAsync<TObjectType>(AssetAddressReference aRef, IResourceLocation resourceLocation) where TObjectType : UnityEngine.Object {
+        TObjectType asset = default(TObjectType);
+        if(aRef == null || !aRef.RuntimeKeyIsValid()) {
+            Debug.LogError("Invalid run time key");
+            return asset;
+        }
+        if(IsLoaded(aRef)) {
+            try {
+                asset = (TObjectType)aRef.Asset;
+            } catch {
+                Debug.LogError("Loaded Asset Type and Requested asset type do not match");
+            }
+        } else if(IsLoading(aRef)) {
+            try {
+                await aRef.OperationHandle.Convert<TObjectType>().Task;
+                if(aRef.Asset != null) {
+                    asset = (TObjectType)aRef.Asset;
+                }
+            } catch {
+                Debug.LogError("Loaded Asset Type and Requested asset type do not match");
+            }
+        } else {
+            AsyncOperationHandle<TObjectType> handle = aRef.LoadAssetAsync<TObjectType>(resourceLocation);
+            //aRef.ShowResourceLocations();
+            await handle.Task;
+            if(aRef.Asset != null) {
+                asset = (TObjectType)aRef.Asset;
+            } else {
+                Debug.LogError("Failed Loading " + aRef);
+            }
+        }
+        return asset;
+    }
+
+
     public static async Task<List<TObjectType>> TryGetOrLoadObjectsAsync<TObjectType>(List<AssetReferenceT<TObjectType>> aRef) where TObjectType : UnityEngine.Object {
         List<TObjectType> objectsList = new List<TObjectType>();
         for(int i = 0; i < aRef.Count; i++) {
@@ -135,13 +212,67 @@ public class AddressableAssetManager
         callBack?.Invoke(instantiated_object);
     }
 
+    public static async void TryLoadAndInstatiate(AssetReferenceGameObject assetReference, Transform parent, DiContainer container, System.Action<GameObject> callBack = null) {
+        GameObject loaded_prefab = await TryGetOrLoadObjectAsync<GameObject>(assetReference);
+        GameObject instantiated_object = container.InstantiatePrefab(loaded_prefab, parent);
+        callBack?.Invoke(instantiated_object);
+    }
+
     public static async Task<GameObject> TryLoadAndInstantiateGameObject(AssetReferenceGameObject assetReference, Transform parent) {
         GameObject loaded_prefab = await TryGetOrLoadObjectAsync<GameObject>(assetReference);
         GameObject instantiated_object = GameObject.Instantiate(loaded_prefab, parent);
         return instantiated_object;
     }
 
+    public static async void TryLoadAndInstatiate(AssetAddressReference assetReference, Transform parent, System.Action<GameObject> callBack = null) {
+        GameObject loaded_prefab = await TryGetOrLoadObjectAsync<GameObject>(assetReference);
+        GameObject instantiated_object = GameObject.Instantiate(loaded_prefab, parent);
+        callBack?.Invoke(instantiated_object);
+    }
+
+    public static async Task<GameObject> TryLoadAndInstantiateGameObject(AssetAddressReference assetReference, Transform parent) {
+        GameObject loaded_prefab = await TryGetOrLoadObjectAsync<GameObject>(assetReference);
+        GameObject instantiated_object = GameObject.Instantiate(loaded_prefab, parent);
+        return instantiated_object;
+    }
+
+    public static async Task<TObjectType> LoadLatestObjectAsync<TObjectType>(AssetAddressReference aRef) where TObjectType : UnityEngine.Object {
+        TObjectType asset = default(TObjectType);
+        if(aRef == null || !aRef.RuntimeKeyIsValid()) {
+            Debug.LogError("Invalid run time key");
+            return asset;
+        }
+        IResourceLocation upgradedResourceLocation = await GetUpgradedLocation(aRef);
+        if(upgradedResourceLocation !=null && !string.IsNullOrEmpty(upgradedResourceLocation.PrimaryKey)) {
+            Debug.Log("Load Upgraded Asset");
+            return await TryGetOrLoadObjectAsync<TObjectType>(aRef, upgradedResourceLocation);
+        } else {
+            Debug.Log("Load Local Catalog Asset");
+            return await TryGetOrLoadObjectAsync<TObjectType>(aRef);
+        }
+    }
+
+    private static async Task<IResourceLocation> GetUpgradedLocation(AssetAddressReference aRef) {
+        IResourceLocation upgradedResourceLocation = default(IResourceLocation);
+        AsyncOperationHandle<IList<IResourceLocation>> resourceLocationHandler = aRef.GetUpgradedResourceLocations();
+        if(resourceLocationHandler.IsValid()) {
+            IList<IResourceLocation> resourceLocations = await resourceLocationHandler.Task;
+            if(resourceLocations!=null && resourceLocations.Count > 0) {
+                upgradedResourceLocation = resourceLocations[0];
+            }
+        }
+        return upgradedResourceLocation;
+    }
+
     public static void Unload(AssetReference aRef) {
+        if(IsLoaded(aRef) || IsLoading(aRef)) {
+            aRef.ReleaseAsset();
+        } else {
+            Debug.LogError("Asset is not loaded or loading");
+        }
+    }
+
+    public static void Unload(AssetAddressReference aRef) {
         if(IsLoaded(aRef) || IsLoading(aRef)) {
             aRef.ReleaseAsset();
         } else {

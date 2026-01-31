@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using System;
 using Zenject;
@@ -8,6 +9,8 @@ using UnityEngine.ResourceManagement;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
+using UnityEngine.AddressableAssets.ResourceLocators;
+using UnityEngine.ResourceManagement.ResourceLocations;
 
 public class AssetDeliveryManager : IInitializable {
 
@@ -18,9 +21,18 @@ public class AssetDeliveryManager : IInitializable {
     private int retries = 0;
     private const int MAX_RETRIES = 5;
 
-    private const string download_key = "Remote";
+    private const string download_key = "TestLabel";
 
     public void Initialize() {
+        UpdateCatalogAndDoDownload();
+    }
+
+    private async void UpdateCatalogAndDoDownload() {
+        AsyncOperationHandle<IResourceLocator> catalog_load_handle =  Addressables.LoadContentCatalogAsync("https://s3.ap-south-1.amazonaws.com/superstars.assetbundles.testbuild/SP_Test/Android/catalog_master.json","_SP");
+        await catalog_load_handle.Task;
+        //Debug.LogError(catalog_load_handle.Status);
+        //Debug.LogError(catalog_load_handle.Result);
+        //catalog_load_handle.Result.Keys.ToList().ForEach(x => Debug.LogError(x));
         FetchSizeAndStartDownload();
     }
 
@@ -61,6 +73,11 @@ public class AssetDeliveryManager : IInitializable {
     /// </summary>
     public async void CheckAndStartDownload() {
         current_download_size = await GetDowloadSize();
+        foreach(UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator l in Addressables.ResourceLocators) {
+            Debug.LogError(l);
+            IList<IResourceLocation> locs;
+            Debug.LogError(l.Locate(download_key, null, out locs));
+        }
         if(current_download_size > 0) {
             download_handle = Addressables.DownloadDependenciesAsync(download_key); // Removed auto release handler look into it later
             download_handle.Completed += OnDownloadComplete;
@@ -75,6 +92,11 @@ public class AssetDeliveryManager : IInitializable {
         } else {
             RestartDownload();
             Debug.Log("Download Failed");
+        }
+        foreach(UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator l in Addressables.ResourceLocators) {
+            Debug.LogError(l);
+            IList<IResourceLocation> locs;
+            Debug.LogError(l.Locate(download_key, null, out locs));
         }
     }
 

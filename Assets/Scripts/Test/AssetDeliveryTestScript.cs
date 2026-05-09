@@ -15,7 +15,7 @@ public class AssetDeliveryTestScript : MonoBehaviour {
     public List<AssetReference> references;
     public AssetReference ripple;
 
-    public const int BUNDLE_VERSION = 11;
+    public const int BUNDLE_VERSION = 21;
 
     // Start is called before the first frame update
     void Start() {

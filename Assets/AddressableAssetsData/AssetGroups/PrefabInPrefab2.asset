@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: PrefabInPrefab2
+  m_EditorClassIdentifier: 
+  m_GroupName: PrefabInPrefab2
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 21e8217c8d69e184ea61810c033cf705
+  m_SerializeEntries:
+  - m_GUID: c44295999b3d17346852c4db215228d6
+    m_Address: Assets/Sprites/PrefabInPrefabTest2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 28d7924d7ea992e419ad806a39d9b6c3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 926784233123af54d882fe379a4c9658, type: 2}
+    - {fileID: 11400000, guid: 4d77981da7b30fa47be8ffb75ce16fe0, type: 2}

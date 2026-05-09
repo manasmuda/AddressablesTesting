@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Group43
+  m_EditorClassIdentifier: 
+  m_GroupName: Group43
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b8150bed63c71c94fabd2551c5715b46
+  m_SerializeEntries:
+  - m_GUID: 67f37b8b5bc20b247908716d90e4bdbc
+    m_Address: Assets/Sprites/eq-slide-43-prefab.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 51fc6a1a50b029f42812c8e7c4b8c07c
+    m_Address: Assets/Sprites/eq_slide_4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 28d7924d7ea992e419ad806a39d9b6c3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 84bebc485ad31634491df6639449c5b2, type: 2}
+    - {fileID: 11400000, guid: 2057e0f033fd0e4458164b41e2bccb5b, type: 2}

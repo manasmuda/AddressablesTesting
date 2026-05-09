@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: PrefabInScene1
+  m_EditorClassIdentifier: 
+  m_GroupName: PrefabInScene1
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f91f3138709fa604d9c41f5edcf24bdf
+  m_SerializeEntries:
+  - m_GUID: 52246eb4fb4786541beb389f2dd25529
+    m_Address: Assets/PrefabInScene1.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 28d7924d7ea992e419ad806a39d9b6c3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ec87f226362475347be77863992bff7c, type: 2}
+    - {fileID: 11400000, guid: a8db615cde8611142bacc75cf1a78335, type: 2}

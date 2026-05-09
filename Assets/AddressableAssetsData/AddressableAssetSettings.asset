@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: AddressableAssetSettings
   m_EditorClassIdentifier: 
   m_DefaultGroup: 718b834c81b115a4a89f26165c294598
+  m_CachedHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 1
   m_BundleLocalCatalog: 0
@@ -21,6 +24,7 @@ MonoBehaviour:
   m_IgnoreUnsupportedFilesInBuild: 0
   m_UniqueBundleIds: 0
   m_NonRecursiveBuilding: 0
+  m_CCDEnabled: 0
   m_maxConcurrentWebRequests: 500
   m_ContiguousBundles: 0
   m_StripUnityVersionFromBundleBuild: 0
@@ -34,6 +38,7 @@ MonoBehaviour:
   m_RemoteCatalogLoadPath:
     m_Id: d82fb906504ccff498844f3b41a41e79
   m_ContentStateBuildPath: 
+  m_BuildAddressablesWithPlayerBuild: 2
   m_overridePlayerVersion: main
   m_GroupAssets:
   - {fileID: 11400000, guid: a7c8e1f78d31f0d4ead128aea260927d, type: 2}
@@ -52,6 +57,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6755f27e38232454f9763a485f57c73f, type: 2}
   - {fileID: 11400000, guid: 44c5885aac0677145818df890dbd08a2, type: 2}
   - {fileID: 11400000, guid: f4f28ec5c52dcfa4bb5b8d2bcae75b16, type: 2}
+  - {fileID: 11400000, guid: 829eaac358632454aa2e1c760efc18d1, type: 2}
+  - {fileID: 11400000, guid: e8027af69b77b4b43997c1943281b1d6, type: 2}
+  - {fileID: 11400000, guid: 7450078b1679f4648a57dad2d14edade, type: 2}
+  - {fileID: 11400000, guid: e81054d54af3f274184f70f168ae9c4f, type: 2}
+  - {fileID: 11400000, guid: 675126d46f4aed44fb5d9d2d5243cd08, type: 2}
+  - {fileID: 11400000, guid: 7ab1b2d2ada4f0b45b89494f75d38945, type: 2}
+  - {fileID: 11400000, guid: 56535b88506825f44aa8f700f4fb92b0, type: 2}
+  - {fileID: 11400000, guid: 272579f99867bb649bb2ed14c33afd7b, type: 2}
+  - {fileID: 11400000, guid: af6159fa79e2a2d4eb3b445ba5127d52, type: 2}
+  - {fileID: 11400000, guid: 421b98284de555d4da2b7779dae24990, type: 2}
+  - {fileID: 11400000, guid: 357bd0fe14374a044a9f33d5bf128788, type: 2}
+  - {fileID: 11400000, guid: fe78b14ab95798b4eb7ab95f0683f6e5, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1

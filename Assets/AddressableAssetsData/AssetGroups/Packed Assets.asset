@@ -21,14 +21,10 @@ MonoBehaviour:
     m_Address: Assets/Sprites/WorldTour/RippleEffectImages/Ripple.spriteatlas
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
   - m_GUID: 132e1cd284c71514e9d25d3819e9be3a
-    m_Address: Assets/Sprites/Image 1.prefab
+    m_Address: eq-slide-4-prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 28d7924d7ea992e419ad806a39d9b6c3, type: 2}
   m_SchemaSet:

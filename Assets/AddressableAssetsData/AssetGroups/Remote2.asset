@@ -18,11 +18,9 @@ MonoBehaviour:
   m_GUID: e00c568e21c87e647941004717719a1c
   m_SerializeEntries:
   - m_GUID: 368a681f2dcd5344484ddfe01d99faf6
-    m_Address: Assets/Sprites/Image.prefab
+    m_Address: eq-slide-3-prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 28d7924d7ea992e419ad806a39d9b6c3, type: 2}
   m_SchemaSet:

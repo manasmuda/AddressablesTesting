@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Prefab_SO
+  m_EditorClassIdentifier: 
+  m_GroupName: Prefab_SO
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 91e4438b2dff46e4493373d1b71803e2
+  m_SerializeEntries:
+  - m_GUID: aecaa5b595a458246931b1e92115e564
+    m_Address: Assets/Sprites/PrefabSOTest_ImageDataHolder.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 28d7924d7ea992e419ad806a39d9b6c3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: dedb902b2b2a39d489578d8fba68d145, type: 2}
+    - {fileID: 11400000, guid: f71593ffe23ed11448186d3c89aca68c, type: 2}
